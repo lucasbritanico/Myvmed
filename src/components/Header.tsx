@@ -40,8 +40,8 @@ const Header = () => {
           <div className="absolute inset-0 bg-primary/20 blur-2xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
           <img
             src="/logo-new.jpg"
-            alt="Virtual Medical Solutions"
-            className="relative h-16 md:h-20 w-auto object-contain transition-transform duration-300 group-hover:scale-105 drop-shadow-lg rounded-xl"
+            alt="Myvmed"
+            className="relative h-24 md:h-32 w-auto object-contain transition-transform duration-300 group-hover:scale-105 drop-shadow-lg rounded-xl"
           />
         </Link>
 

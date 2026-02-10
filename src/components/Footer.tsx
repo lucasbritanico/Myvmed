@@ -108,8 +108,8 @@ const Footer = () => {
                 </a>
               </li>
               <li>
-                <a href="mailto:hello@virtualmedical.com" className="hover:text-white transition-colors">
-                  hello@virtualmedical.com
+                <a href="mailto:hello@myvmed.com" className="hover:text-white transition-colors">
+                  hello@myvmed.com
                 </a>
               </li>
             </ul>
@@ -125,7 +125,7 @@ const Footer = () => {
           className="pt-8 border-t border-white/10 flex flex-col sm:flex-row justify-between items-center gap-4 text-xs text-white/40"
         >
           <p>
-            © {new Date().getFullYear()} Virtual Medical Solutions. All rights reserved.
+            © {new Date().getFullYear()} Myvmed. All rights reserved.
           </p>
           <div className="flex gap-6">
             {footerLinks.legal.map((link) => (

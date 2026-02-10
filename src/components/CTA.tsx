@@ -59,14 +59,14 @@ const CTA = () => {
 
                   <div className="space-y-4">
                     {/* Email Card */}
-                    <a href="mailto:hello@healthbridge.com" className="group block">
+                    <a href="mailto:hello@myvmed.com" className="group block">
                       <div className="bg-gray-50 p-6 rounded-[2rem] border border-transparent hover:bg-white hover:border-secondary/20 hover:shadow-xl hover:shadow-secondary/5 transition-all duration-300 flex items-center gap-6 group-hover:-translate-y-1">
                         <div className="w-14 h-14 rounded-2xl bg-white shadow-sm flex items-center justify-center text-secondary group-hover:bg-secondary group-hover:text-white transition-colors duration-300 shrink-0">
                           <Mail className="w-6 h-6" />
                         </div>
                         <div>
                           <p className="text-sm font-semibold text-gray-400 mb-1">Email us anytime</p>
-                          <p className="text-lg font-bold text-primary">hello@healthbridge.com</p>
+                          <p className="text-lg font-bold text-primary">hello@myvmed.com</p>
                         </div>
                         <ArrowRight className="ml-auto w-5 h-5 text-gray-300 group-hover:text-secondary -translate-x-2 group-hover:translate-x-0 opacity-0 group-hover:opacity-100 transition-all duration-300" />
                       </div>
