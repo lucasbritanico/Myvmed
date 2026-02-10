@@ -1,153 +1,172 @@
-import { motion } from "framer-motion";
-import { ArrowRight, CheckCircle2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import heroIllustration from "@/assets/hero-illustration.png";
-
-const trustPoints = [
-  "HIPAA-Aware Professionals",
-  "US Healthcare Aligned",
-  "24/7 Support Available",
-];
+import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
 
 const Hero = () => {
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.15,
+        delayChildren: 0.2,
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 40 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { type: "spring", stiffness: 50, damping: 20 }
+    },
+  };
+
+  const imageVariants = {
+    hidden: { opacity: 0, scale: 0.8, rotate: -2 },
+    visible: {
+      opacity: 1,
+      scale: 1,
+      rotate: 0,
+      transition: { type: "spring", stiffness: 40, damping: 20, delay: 0.4 }
+    },
+  };
+
   return (
-    <section className="relative min-h-screen flex items-center pt-18 overflow-hidden">
-      {/* Background gradient */}
-      <div className="absolute inset-0 bg-gradient-to-br from-secondary/50 via-background to-background" />
-      
-      {/* Subtle pattern overlay */}
-      <div 
-        className="absolute inset-0 opacity-[0.02]"
-        style={{
-          backgroundImage: `radial-gradient(circle at 1px 1px, currentColor 1px, transparent 0)`,
-          backgroundSize: '40px 40px',
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-primary pt-32 pb-20 text-white selection:bg-secondary selection:text-white">
+      {/* Finovo-style Active Ambient Glow */}
+      <motion.div
+        animate={{
+          y: [0, -40, 0],
+          scale: [1, 1.1, 1],
+          rotate: [0, 5, 0]
         }}
+        transition={{ duration: 12, repeat: Infinity, ease: "easeInOut" }}
+        className="absolute top-0 right-0 w-[800px] h-[800px] bg-secondary/20 rounded-full blur-[120px] -translate-y-1/2 translate-x-1/3 pointer-events-none"
+      />
+      <motion.div
+        animate={{
+          y: [0, 50, 0],
+          scale: [1, 1.2, 1],
+          x: [0, -20, 0]
+        }}
+        transition={{ duration: 15, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+        className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-secondary/10 rounded-full blur-[100px] translate-y-1/4 -translate-x-1/4 pointer-events-none"
       />
 
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-          {/* Content */}
+      <div className="container mx-auto px-6 md:px-12 relative z-10">
+        <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
+          {/* Text Content */}
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="max-w-2xl"
+            variants={containerVariants}
+            initial="hidden"
+            animate="visible"
+            className="text-center lg:text-left"
           >
-            {/* Badge */}
-            <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.5, delay: 0.1 }}
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-secondary border border-border/50 mb-6"
-            >
-              <span className="w-2 h-2 rounded-full bg-primary animate-pulse-soft" />
-              <span className="text-body-sm text-secondary-foreground font-medium">
-                Trusted by US Healthcare Providers
-              </span>
+            <motion.div variants={itemVariants} className="flex items-center justify-center lg:justify-start gap-4 mb-8">
+              <span className="h-[1px] w-8 bg-secondary/50 block"></span>
+              <span className="text-secondary font-bold tracking-widest text-xs uppercase">Premium Virtual Staffing</span>
             </motion.div>
 
-            {/* Headline */}
             <motion.h1
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              className="text-display-lg sm:text-display-xl font-bold text-foreground mb-6 leading-tight"
+              variants={itemVariants}
+              className="text-4xl md:text-6xl lg:text-[4.5rem] font-bold leading-[1.1] tracking-tight mb-8"
             >
-              Your Dedicated{" "}
-              <span className="text-gradient">Virtual Medical</span>{" "}
-              Assistant Team
+              Leading Healthcare <br />
+              <span className="text-secondary">
+                Virtual Assistant
+              </span> <br />
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-white/70">
+                Solutions.
+              </span>
             </motion.h1>
 
-            {/* Subheadline */}
             <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.3 }}
-              className="text-body-lg text-muted-foreground mb-8 max-w-xl"
+              variants={itemVariants}
+              className="text-lg md:text-xl text-gray-300 mb-10 max-w-xl mx-auto lg:mx-0 leading-relaxed font-light"
             >
-              Reduce administrative burden, improve patient care, and scale your practice 
-              with skilled Filipino healthcare professionals trained to US standards.
+              <strong className="text-white block mb-2">For Medical, Dental, Veterinary & Optometry Practices.</strong>
+              Reclaim your time and go home before 5 o'clock. Our HIPAA-compliant virtual assistants handle the busywork so you can focus on your patients.
             </motion.p>
 
-            {/* Trust points */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.4 }}
-              className="flex flex-wrap gap-4 mb-10"
-            >
-              {trustPoints.map((point, index) => (
-                <div
-                  key={index}
-                  className="flex items-center gap-2 text-body-sm text-muted-foreground"
-                >
-                  <CheckCircle2 className="w-4 h-4 text-primary" />
-                  <span>{point}</span>
-                </div>
-              ))}
-            </motion.div>
+            <motion.div variants={itemVariants} className="flex flex-col sm:flex-row items-center gap-6 justify-center lg:justify-start">
+              <Button
+                size="lg"
+                className="h-14 px-8 rounded-full bg-secondary hover:bg-secondary/90 text-white font-semibold text-base shadow-[0_4px_20px_rgba(0,119,255,0.3)]"
+                asChild
+              >
+                <Link to="/consultation" className="flex items-center gap-2">
+                  <motion.div
+                    whileHover={{ x: 3 }}
+                    transition={{ duration: 0.2 }}
+                    className="flex items-center gap-2"
+                  >
+                    Get Started <span className="text-xl">↗</span>
+                  </motion.div>
+                </Link>
+              </Button>
 
-            {/* CTAs */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.5 }}
-              className="flex flex-col sm:flex-row gap-4"
-            >
-              <Button size="lg" className="shadow-glow group" asChild>
-                <a href="#contact">
-                  Book Free Consultation
-                  <ArrowRight className="ml-2 w-4 h-4 transition-transform group-hover:translate-x-1" />
-                </a>
-              </Button>
-              <Button size="lg" variant="outline" asChild>
-                <a href="#services">Explore Services</a>
-              </Button>
+              {/* Social Proof Avatar Stack */}
+              <div className="flex items-center gap-3">
+                <div className="flex -space-x-3">
+                  {[1, 2, 3].map((i) => (
+                    <div key={i} className="w-10 h-10 rounded-full border-2 border-primary bg-gray-800 overflow-hidden">
+                      <img src={`https://i.pravatar.cc/100?img=${i + 10}`} alt="User" className="w-full h-full object-cover" />
+                    </div>
+                  ))}
+                </div>
+                <div className="text-left">
+                  <p className="text-white font-bold text-sm leading-none">100+</p>
+                  <p className="text-gray-400 text-xs">Trusted Clinics</p>
+                </div>
+              </div>
             </motion.div>
           </motion.div>
 
-          {/* Hero Illustration */}
+          {/* Image/Visual - Large Rounded Card with Floating Animation */}
           <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8, delay: 0.3 }}
-            className="relative hidden lg:block"
+            variants={imageVariants}
+            initial="hidden"
+            animate="visible"
+            className="relative"
           >
-            <div className="relative">
-              {/* Glow effect behind image */}
-              <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-accent/20 rounded-3xl blur-3xl" />
-              
-              <img
-                src={heroIllustration}
-                alt="Virtual Medical Assistant Services"
-                className="relative w-full h-auto rounded-2xl"
-              />
-            </div>
-
-            {/* Floating stat cards */}
             <motion.div
-              animate={{ y: [0, -10, 0] }}
-              transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-              className="absolute -left-8 top-1/4 card-premium p-4"
+              animate={{ y: [-15, 15, -15] }}
+              transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+              className="relative rounded-[2.5rem] overflow-hidden border border-white/10 shadow-2xl bg-white/5 backdrop-blur-sm p-3"
             >
-              <div className="text-heading-sm font-bold text-primary">95%</div>
-              <div className="text-body-sm text-muted-foreground">Client Satisfaction</div>
+              <div className="rounded-[2rem] overflow-hidden relative aspect-[4/3] group">
+                <img
+                  src="/hero-image.png"
+                  alt="Medical Professional"
+                  className="object-cover w-full h-full transition-transform duration-700 group-hover:scale-105 grayscale-[20%] group-hover:grayscale-0"
+                />
+
+                {/* Overlay Gradient */}
+                <div className="absolute inset-0 bg-gradient-to-t from-primary/90 via-transparent to-transparent opacity-80" />
+
+                <div className="absolute bottom-8 left-8 right-8">
+                  <div className="flex items-center gap-3 mb-2">
+                    <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
+                    <span className="text-white/80 text-sm font-medium uppercase tracking-wider">Available Now</span>
+                  </div>
+                  <p className="text-white text-xl font-medium leading-snug">
+                    "The most reliable staffing update we've ever made."
+                  </p>
+                </div>
+              </div>
             </motion.div>
 
+            {/* Floating Decorative Elements */}
             <motion.div
-              animate={{ y: [0, 10, 0] }}
-              transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-              className="absolute -right-4 bottom-1/4 card-premium p-4"
-            >
-              <div className="text-heading-sm font-bold text-primary">40%</div>
-              <div className="text-body-sm text-muted-foreground">Cost Savings</div>
-            </motion.div>
+              animate={{ y: [0, -20, 0], opacity: [0.3, 0.6, 0.3] }}
+              transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
+              className="absolute -top-6 -right-6 w-24 h-24 bg-secondary rounded-full blur-[40px] opacity-40 pointer-events-none"
+            />
           </motion.div>
         </div>
       </div>
-
-      {/* Bottom fade */}
-      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-background to-transparent" />
     </section>
   );
 };

@@ -2,17 +2,19 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Link, useLocation } from "react-router-dom";
 
 const navLinks = [
-  { label: "Services", href: "#services" },
-  { label: "Why Us", href: "#why-us" },
-  { label: "How It Works", href: "#process" },
-  { label: "About", href: "#about" },
+  { label: "Home", href: "/" },
+  { label: "About Us", href: "/about" },
+  { label: "Solutions", href: "/services" },
+  { label: "Contact", href: "/contact" },
 ];
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -22,92 +24,105 @@ const Header = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  return (
-    <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled
-          ? "bg-background/90 backdrop-blur-xl shadow-soft border-b border-border/50"
-          : "bg-transparent"
-      }`}
-    >
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-18">
-          {/* Logo */}
-          <a href="#" className="flex items-center gap-2 group">
-            <div className="w-10 h-10 rounded-xl bg-primary flex items-center justify-center shadow-glow transition-transform group-hover:scale-105">
-              <span className="text-primary-foreground font-bold text-lg">V</span>
-            </div>
-            <span className="font-semibold text-lg text-foreground hidden sm:block">
-              VMA<span className="text-primary">Care</span>
-            </span>
-          </a>
+  const isLinkActive = (path: string) => {
+    if (path === "/" && location.pathname !== "/") return false;
+    return location.pathname.startsWith(path);
+  };
 
-          {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center gap-1">
+  return (
+    <header className="fixed top-0 left-0 right-0 z-50 flex justify-center pt-6 px-4 md:px-8 h-auto pointer-events-none">
+      {/* Max Width Container to hold aligned elements */}
+      <div className="w-full max-w-7xl flex items-center justify-between pointer-events-auto">
+
+        {/* Logo - Independent & Large */}
+        <Link to="/" className="relative group shrink-0">
+          {/* Logo Glow */}
+          <div className="absolute inset-0 bg-primary/20 blur-2xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+          <img
+            src="/logo-new.jpg"
+            alt="Virtual Medical Solutions"
+            className="relative h-16 md:h-20 w-auto object-contain transition-transform duration-300 group-hover:scale-105 drop-shadow-lg rounded-xl"
+          />
+        </Link>
+
+        {/* Navigation Pill - Centered & Floating */}
+        <div
+          className={`hidden md:flex items-center gap-8 rounded-full transition-all duration-500 
+             ${isScrolled
+              ? "bg-white/90 backdrop-blur-xl shadow-lg border border-white/20 py-3 px-8"
+              : "bg-white/80 backdrop-blur-md border border-white/10 py-4 px-10"
+            }`}
+        >
+          <nav className="flex items-center gap-8">
             {navLinks.map((link) => (
-              <a
+              <Link
                 key={link.label}
-                href={link.href}
-                className="px-4 py-2 text-body-sm text-muted-foreground hover:text-foreground transition-colors link-underline"
+                to={link.href}
+                className={`text-sm font-bold transition-all hover:text-secondary hover:-translate-y-0.5 ${isLinkActive(link.href) ? "text-secondary" : "text-gray-600"
+                  }`}
               >
                 {link.label}
-              </a>
+              </Link>
             ))}
           </nav>
+        </div>
 
-          {/* CTA Buttons */}
-          <div className="hidden md:flex items-center gap-3">
-            <Button variant="ghost" size="sm" asChild>
-              <a href="#contact">Contact</a>
-            </Button>
-            <Button size="sm" className="shadow-glow" asChild>
-              <a href="#contact">Book Consultation</a>
+        {/* CTA / Mobile Menu - Right Side */}
+        <div className="flex items-center gap-4 shrink-0">
+          {/* Desktop CTA */}
+          <div className="hidden md:flex">
+            <Button
+              size="default"
+              className="rounded-full bg-primary hover:bg-primary/90 text-white px-8 h-12 shadow-xl shadow-primary/25 border border-white/10 transition-all hover:scale-105 hover:-translate-y-1 font-semibold text-base"
+              asChild
+            >
+              <Link to="/consultation">Let's Talk</Link>
             </Button>
           </div>
 
-          {/* Mobile Menu Button */}
-          <button
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="md:hidden p-2 text-foreground"
-            aria-label="Toggle menu"
-          >
-            {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
-          </button>
+          {/* Mobile Menu Toggle */}
+          <div className="md:hidden bg-white/90 backdrop-blur-md rounded-full shadow-lg p-2 border border-white/20">
+            <button
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              className="p-2 text-primary hover:bg-gray-100 rounded-full transition-colors"
+            >
+              {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+            </button>
+          </div>
         </div>
-      </div>
 
-      {/* Mobile Menu */}
-      <AnimatePresence>
-        {isMobileMenuOpen && (
-          <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: "auto" }}
-            exit={{ opacity: 0, height: 0 }}
-            className="md:hidden bg-background/95 backdrop-blur-xl border-b border-border"
-          >
-            <nav className="container mx-auto px-4 py-4 flex flex-col gap-2">
-              {navLinks.map((link) => (
-                <a
-                  key={link.label}
-                  href={link.href}
-                  onClick={() => setIsMobileMenuOpen(false)}
-                  className="px-4 py-3 text-body text-muted-foreground hover:text-foreground hover:bg-secondary rounded-lg transition-all"
-                >
-                  {link.label}
-                </a>
-              ))}
-              <div className="flex flex-col gap-2 mt-4 pt-4 border-t border-border">
-                <Button variant="outline" asChild>
-                  <a href="#contact">Contact Us</a>
-                </Button>
-                <Button asChild>
-                  <a href="#contact">Book Free Consultation</a>
-                </Button>
-              </div>
-            </nav>
-          </motion.div>
-        )}
-      </AnimatePresence>
+        {/* Mobile Menu Dropdown */}
+        <AnimatePresence>
+          {isMobileMenuOpen && (
+            <motion.div
+              initial={{ opacity: 0, y: -20, scale: 0.95 }}
+              animate={{ opacity: 1, y: 0, scale: 1 }}
+              exit={{ opacity: 0, y: -20, scale: 0.95 }}
+              className="absolute top-24 left-4 right-4 md:hidden bg-white rounded-3xl border border-gray-100 shadow-2xl p-4 overflow-hidden z-50 origin-top"
+            >
+              <nav className="flex flex-col gap-2">
+                {navLinks.map((link) => (
+                  <Link
+                    key={link.label}
+                    to={link.href}
+                    onClick={() => setIsMobileMenuOpen(false)}
+                    className={`px-6 py-4 text-lg font-bold rounded-2xl transition-colors flex justify-between items-center ${isLinkActive(link.href) ? "bg-secondary/10 text-secondary" : "text-gray-600 hover:bg-gray-50"
+                      }`}
+                  >
+                    {link.label}
+                    {isLinkActive(link.href) && <span className="w-2 h-2 rounded-full bg-secondary" />}
+                  </Link>
+                ))}
+                <div className="mt-4 pt-4 border-t border-gray-100">
+                  <Button className="w-full rounded-2xl bg-primary h-14 text-lg font-bold shadow-lg shadow-primary/20" asChild>
+                    <Link to="/consultation">Let's Talk</Link>
+                  </Button>
+                </div>
+              </nav>
+            </motion.div>
+          )}
+        </AnimatePresence>
+      </div>
     </header>
   );
 };

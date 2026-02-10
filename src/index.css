@@ -8,105 +8,82 @@
 
 @layer base {
   :root {
-    /* Core brand colors - Deep medical teal */
-    --background: 180 20% 99%;
-    --foreground: 180 30% 15%;
+    /* Core brand colors - Finovo Palette */
+    /* Backgrounds: White & Deep Slate */
+    --background: 0 0% 100%;
+    --foreground: 210 29% 24%;
+    /* Dark Slate text */
 
     /* Card surfaces */
     --card: 0 0% 100%;
-    --card-foreground: 180 30% 15%;
+    --card-foreground: 210 29% 24%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 180 30% 15%;
+    --popover-foreground: 210 29% 24%;
 
-    /* Primary - Deep Teal */
-    --primary: 175 75% 25%;
+    /* Primary - Deep Slate Navy (#2C3E50) */
+    --primary: 210 29% 24%;
     --primary-foreground: 0 0% 100%;
 
-    /* Secondary - Light teal tint */
-    --secondary: 175 40% 95%;
-    --secondary-foreground: 175 75% 20%;
+    /* Secondary - Electric Blue/Cyan (#0077FF) */
+    --secondary: 212 100% 50%;
+    --secondary-foreground: 0 0% 100%;
 
-    /* Muted surfaces */
-    --muted: 175 15% 96%;
-    --muted-foreground: 175 15% 45%;
+    /* Muted/Soft */
+    --muted: 210 20% 96%;
+    --muted-foreground: 210 10% 40%;
 
-    /* Accent - Soft Coral */
-    --accent: 15 70% 70%;
-    --accent-foreground: 15 80% 25%;
+    /* Accent */
+    --accent: 212 100% 95%;
+    /* Light Blue Tint */
+    --accent-foreground: 212 100% 50%;
 
     /* System colors */
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 175 20% 90%;
-    --input: 175 20% 90%;
-    --ring: 175 75% 35%;
+    --border: 210 20% 90%;
+    --input: 210 20% 90%;
+    --ring: 212 100% 50%;
 
-    --radius: 0.75rem;
+    --radius: 2rem;
+    /* Large radius for Finovo style */
 
-    /* Custom tokens for healthcare theme */
-    --hero-gradient: linear-gradient(135deg, hsl(175 75% 25%) 0%, hsl(180 60% 30%) 50%, hsl(175 50% 35%) 100%);
-    --card-shadow: 0 4px 20px -4px hsl(175 30% 20% / 0.08);
-    --card-shadow-hover: 0 12px 40px -8px hsl(175 30% 20% / 0.15);
-    --glow-primary: 0 0 60px -15px hsl(175 75% 40% / 0.3);
-    --glow-accent: 0 0 40px -10px hsl(15 70% 60% / 0.25);
-
-    /* Section backgrounds */
-    --section-alt: 175 30% 98%;
-    --section-dark: 175 50% 12%;
-
-    /* Sidebar (keeping defaults) */
-    --sidebar-background: 0 0% 98%;
-    --sidebar-foreground: 240 5.3% 26.1%;
-    --sidebar-primary: 175 75% 25%;
-    --sidebar-primary-foreground: 0 0% 98%;
-    --sidebar-accent: 175 40% 95%;
-    --sidebar-accent-foreground: 175 75% 20%;
-    --sidebar-border: 175 20% 91%;
-    --sidebar-ring: 175 75% 45%;
+    /* Finovo Custom Tokens */
+    --ambient-glow: 0 0 120px 0 rgba(0, 119, 255, 0.4);
+    --glass-border: rgba(255, 255, 255, 0.2);
   }
 
   .dark {
-    --background: 180 30% 8%;
-    --foreground: 175 20% 95%;
+    /* Finovo doesn't explicitly have a dark mode mentioned, but maintaining structure */
+    --background: 210 29% 10%;
+    --foreground: 210 20% 98%;
 
-    --card: 180 25% 12%;
-    --card-foreground: 175 20% 95%;
+    --card: 210 29% 15%;
+    --card-foreground: 210 20% 98%;
 
-    --popover: 180 25% 12%;
-    --popover-foreground: 175 20% 95%;
+    --popover: 210 29% 15%;
+    --popover-foreground: 210 20% 98%;
 
-    --primary: 175 60% 50%;
-    --primary-foreground: 180 30% 8%;
+    --primary: 212 100% 50%;
+    /* Electric Blue in dark mode */
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 180 20% 18%;
-    --secondary-foreground: 175 20% 90%;
+    --secondary: 210 29% 24%;
+    --secondary-foreground: 210 20% 98%;
 
-    --muted: 180 20% 18%;
-    --muted-foreground: 175 15% 60%;
+    --muted: 210 29% 20%;
+    --muted-foreground: 210 20% 60%;
 
-    --accent: 15 65% 60%;
-    --accent-foreground: 15 80% 95%;
+    --accent: 212 100% 20%;
+    --accent-foreground: 212 100% 80%;
 
     --destructive: 0 62% 50%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 180 20% 20%;
-    --input: 180 20% 20%;
-    --ring: 175 60% 50%;
-
-    --section-alt: 180 25% 10%;
-    --section-dark: 180 30% 6%;
-
-    --sidebar-background: 180 30% 10%;
-    --sidebar-foreground: 175 20% 90%;
-    --sidebar-primary: 175 60% 50%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 180 20% 18%;
-    --sidebar-accent-foreground: 175 20% 90%;
-    --sidebar-border: 180 20% 20%;
-    --sidebar-ring: 175 60% 50%;
+    --border: 210 29% 20%;
+    --input: 210 29% 20%;
+    --ring: 212 100% 50%;
   }
 }
 
@@ -117,6 +94,7 @@
 
   body {
     @apply bg-background text-foreground antialiased;
+    font-family: 'Manrope', sans-serif;
     font-feature-settings: "cv11", "ss01";
   }
 
@@ -126,6 +104,7 @@
 }
 
 @layer components {
+
   /* Hero section styling */
   .hero-gradient {
     background: var(--hero-gradient);
@@ -161,9 +140,39 @@
     background-color: hsl(var(--section-dark));
   }
 
+  /* Ambient Glow Effect */
+  .ambient-glow {
+    position: relative;
+  }
+
+  .ambient-glow::before {
+    content: '';
+    position: absolute;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, var(--ambient-glow) 0%, rgba(0, 0, 0, 0) 70%);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 0;
+    filter: blur(60px);
+    opacity: 0.6;
+    animation: flow 10s ease-in-out infinite alternate;
+  }
+
+  @keyframes flow {
+    0% {
+      transform: translate(-30%, -30%) scale(1);
+    }
+
+    100% {
+      transform: translate(10%, 10%) scale(1.1);
+    }
+  }
+
   /* Glass effect */
   .glass {
-    @apply bg-white/80 backdrop-blur-xl border border-white/20;
+    @apply bg-white/70 backdrop-blur-md border;
+    border-color: var(--glass-border);
   }
 
   /* Text gradient */
@@ -187,13 +196,16 @@
 }
 
 @layer utilities {
+
   /* Animation delays */
   .animation-delay-200 {
     animation-delay: 200ms;
   }
+
   .animation-delay-400 {
     animation-delay: 400ms;
   }
+
   .animation-delay-600 {
     animation-delay: 600ms;
   }

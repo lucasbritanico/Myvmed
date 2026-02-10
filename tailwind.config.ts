@@ -58,26 +58,25 @@ export default {
           ring: "hsl(var(--sidebar-ring))",
         },
         // Custom healthcare palette
-        teal: {
-          50: "hsl(175 40% 96%)",
-          100: "hsl(175 40% 90%)",
-          200: "hsl(175 45% 80%)",
-          300: "hsl(175 50% 65%)",
-          400: "hsl(175 60% 50%)",
-          500: "hsl(175 70% 40%)",
-          600: "hsl(175 75% 30%)",
-          700: "hsl(175 75% 25%)",
-          800: "hsl(175 70% 18%)",
-          900: "hsl(175 65% 12%)",
+        medical: {
+          blue: {
+            50: "#f0f9ff",
+            100: "#e0f2fe",
+            900: "#0c4a6e",
+          },
+          teal: {
+            500: "#00A99D",
+            600: "#008f85",
+          }
         },
-        coral: {
-          50: "hsl(15 70% 97%)",
-          100: "hsl(15 70% 92%)",
-          200: "hsl(15 70% 85%)",
-          300: "hsl(15 70% 75%)",
-          400: "hsl(15 70% 65%)",
-          500: "hsl(15 65% 55%)",
-          600: "hsl(15 60% 45%)",
+        warm: {
+          DEFAULT: "#FDB913", // Sun Yellow
+          100: "#FEF9E7", // Light yellow bg
+          200: "#FDE68A",
+          300: "#FCD34D",
+          400: "#FBBF24",
+          500: "#F59E0B", // Amber/Gold
+          600: "#D97706",
         },
       },
       borderRadius: {
@@ -89,7 +88,7 @@ export default {
         "3xl": "1.5rem",
       },
       fontFamily: {
-        sans: ["Inter", "system-ui", "-apple-system", "sans-serif"],
+        sans: ["Manrope", "system-ui", "-apple-system", "sans-serif"],
       },
       fontSize: {
         "display-xl": ["4.5rem", { lineHeight: "1.1", letterSpacing: "-0.02em" }],
