@@ -34,7 +34,7 @@ const Hero = () => {
   };
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-primary pt-48 pb-20 text-white selection:bg-secondary selection:text-white">
+    <section className="relative min-h-screen flex items-start justify-center overflow-hidden bg-primary pt-40 md:pt-56 pb-20 text-white selection:bg-secondary selection:text-white">
       {/* Finovo-style Active Ambient Glow */}
       <motion.div
         animate={{

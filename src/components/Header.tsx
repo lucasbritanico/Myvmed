@@ -31,13 +31,13 @@ const Header = () => {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 flex justify-center transition-all duration-500 ${isScrolled
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${isScrolled
           ? "bg-white/95 backdrop-blur-md shadow-md py-2 pointer-events-auto"
-          : "pt-6 px-4 md:px-8 h-auto pointer-events-none bg-transparent"
+          : "pt-6 pointer-events-none bg-transparent"
         }`}
     >
-      {/* Max Width Container to hold aligned elements */}
-      <div className="w-full max-w-7xl flex items-center justify-between pointer-events-auto px-4 md:px-8">
+      {/* Container aligned with page content */}
+      <div className="container mx-auto flex items-center justify-between pointer-events-auto px-6 md:px-12">
 
         {/* Logo - Independent & Large */}
         <Link to="/" className="relative group shrink-0">
