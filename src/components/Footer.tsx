@@ -34,11 +34,11 @@ const Footer = () => {
             transition={{ duration: 0.5 }}
             className="sm:col-span-2 lg:col-span-1"
           >
-            <Link to="/" className="flex items-center gap-4 mb-6 inline-block bg-white/5 p-4 rounded-2xl backdrop-blur-sm border border-white/10 hover:bg-white/10 transition-colors">
+            <Link to="/" className="inline-block mb-6">
               <img
-                src="/logo-new.jpg"
+                src="/myvmedlogo.png"
                 alt="Brand Logo"
-                className="h-16 w-auto rounded-lg"
+                className="h-24 w-auto brightness-0 invert opacity-90"
               />
             </Link>
             <p className="text-sm text-white/80 max-w-xs leading-relaxed">
