@@ -8,9 +8,9 @@ import { toast } from "sonner";
 import { Link, useNavigate } from "react-router-dom";
 
 // EmailJS Configuration
-const SERVICE_ID = "service_z5sw1gl";
-const TEMPLATE_ID = "template_w5sxuo3";
-const PUBLIC_KEY = "KQiNVVht7_rS5E4l-";
+const SERVICE_ID = "service_61xu5jg";
+const TEMPLATE_ID = "template_j05cbuc";
+const PUBLIC_KEY = "J0b4ZjH5qYCxRkbsk";
 
 // Step Types
 type StepData = {
