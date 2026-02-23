@@ -100,11 +100,11 @@ const Footer = () => {
             <h4 className="font-semibold text-lg mb-6">Contact</h4>
             <ul className="space-y-4 text-white/70">
               <li className="flex items-start gap-3">
-                <span>123 Medical Center Dr,<br />Suite 100, Tampa FL</span>
+                <span>Santa Barbara , califonia<br /></span>
               </li>
               <li>
                 <a href="tel:+15555555555" className="hover:text-white transition-colors">
-                  (555) 555-5555
+
                 </a>
               </li>
               <li>
