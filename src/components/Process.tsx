@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { MessageSquare, UserCheck, Rocket, ArrowRight } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const steps = [
   {
@@ -100,15 +101,15 @@ const Process = () => {
           <p className="text-gray-500 mb-3 font-medium">
             Ready to transform your practice?
           </p>
-          <a
-            href="/consultation"
+          <Link
+            to="/consultation"
             className="text-primary font-bold hover:text-secondary inline-flex items-center gap-2 text-lg group transition-colors"
           >
             Start with a free consultation
             <span className="w-8 h-8 rounded-full bg-primary/5 flex items-center justify-center group-hover:bg-secondary group-hover:text-white transition-all duration-300">
               <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5" />
             </span>
-          </a>
+          </Link>
         </motion.div>
       </div>
     </section>
