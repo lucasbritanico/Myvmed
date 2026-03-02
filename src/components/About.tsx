@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Heart, Target, Users } from "lucide-react";
+import { Heart, Target, Users, Globe } from "lucide-react";
 
 const values = [
   {
@@ -16,6 +16,11 @@ const values = [
     icon: Users,
     title: "True Partnership",
     description: "We become an extension of your team, not just a vendor.",
+  },
+  {
+    icon: Globe,
+    title: "Bilingual Patient Support",
+    description: "Our Spanish-speaking VMAs from Mexico and Latin America ensure no patient is lost in translation.",
   },
 ];
 
@@ -35,22 +40,27 @@ const About = () => {
               About Us
             </span>
             <h2 className="text-display font-bold text-foreground mb-6">
-              Bridging Filipino Talent with US Healthcare
+              World-Class Talent, Built for US Healthcare
             </h2>
             <div className="space-y-4 text-body-lg text-muted-foreground mb-8">
               <p>
-                We started with a simple belief: US healthcare providers deserve access to exceptional 
-                talent that understands their needs, shares their commitment to patient care, and 
+                We started with a simple belief: US healthcare providers deserve access to exceptional
+                talent that understands their needs, shares their commitment to patient care, and
                 delivers consistent, high-quality support.
               </p>
               <p>
-                Based in the Philippines, we've assembled a team of dedicated healthcare professionals 
-                who bring not just skills, but genuine care to every interaction. We train them to 
+                Based in the Philippines, we've assembled a team of dedicated healthcare professionals
+                who bring not just skills, but genuine care to every interaction. We train them to
                 US standards because that's what your patients deserve.
               </p>
               <p>
-                We're not the biggest, and we don't claim to be. But we are committed, thorough, 
+                We're not the biggest, and we don't claim to be. But we are committed, thorough,
                 and genuinely invested in helping your practice succeed.
+              </p>
+              <p>
+                Additionally, we are proud to offer bilingual capabilities. Our Virtual Medical Assistants
+                (VMAs) from Mexico and other Spanish-speaking Latin American countries allow your practice
+                to serve Spanish-speaking patients seamlessly and with a cultural connection.
               </p>
             </div>
 
@@ -77,14 +87,39 @@ const About = () => {
             {values.map((value, index) => (
               <motion.div
                 key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
+                initial={{ opacity: 0, x: 30 }}
+                whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: 0.3 + index * 0.1 }}
+                whileHover="hover"
+                variants={{
+                  hover: {
+                    y: -5,
+                    boxShadow: "0 10px 30px -10px rgba(0, 119, 255, 0.2)",
+                    borderColor: "rgba(0, 119, 255, 0.2)",
+                    transition: { duration: 0.3, ease: "easeInOut" }
+                  }
+                }}
+                transition={{ duration: 0.6, ease: "easeInOut", delay: 0.3 + index * 0.15 }}
                 className="card-premium p-6 flex gap-5"
               >
-                <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-primary to-primary/80 flex items-center justify-center shrink-0 shadow-glow">
-                  <value.icon className="w-6 h-6 text-primary-foreground" />
+                <div className="shrink-0">
+                  <motion.div
+                    animate={{ scale: [1, 1.05, 1] }}
+                    transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+                  >
+                    <motion.div
+                      variants={{
+                        hover: {
+                          rotate: [0, -8, 8, -6, 6, 0],
+                          scale: 1.05,
+                          transition: { duration: 0.5, ease: "easeInOut" }
+                        }
+                      }}
+                      className="w-14 h-14 rounded-2xl bg-gradient-to-br from-primary to-primary/80 flex items-center justify-center shadow-glow"
+                    >
+                      <value.icon className="w-6 h-6 text-primary-foreground" />
+                    </motion.div>
+                  </motion.div>
                 </div>
                 <div>
                   <h3 className="text-heading-sm font-semibold text-foreground mb-2">

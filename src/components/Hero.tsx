@@ -87,7 +87,7 @@ const Hero = () => {
               variants={itemVariants}
               className="text-2xl md:text-3xl font-bold text-gray-200 mb-6 max-w-2xl mx-auto lg:mx-0"
             >
-              Cut staffing costs by up to 80% — without sacrificing quality.
+              Cut staffing costs by up to 70% — without sacrificing quality.
             </motion.h2>
 
             <motion.p
@@ -147,7 +147,7 @@ const Hero = () => {
                     </div>
                     <div className="text-left py-0.5">
                       <span className="block text-[13px] font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-amber-100 via-amber-300 to-amber-100 leading-none mb-1">
-                        SAVE 70–80%
+                        SAVE UP TO 70%
                       </span>
                       <span className="block text-[10px] font-bold text-amber-200/70 tracking-wider uppercase leading-none">
                         On Labor Costs

@@ -6,25 +6,25 @@ const audiences = [
     icon: Stethoscope,
     title: "Private Practices",
     description: "Solo practitioners and small practices looking to reduce administrative burden and improve patient care.",
-    benefits: ["Reduce overhead costs", "More time with patients", "Improved work-life balance"],
+    benefits: ["Reduce overhead costs", "More time with patients", "Improved work-life balance", "Spanish-speaking patient support"],
   },
   {
     icon: Building2,
     title: "Medical Clinics",
     description: "Multi-provider clinics seeking efficient support for scheduling, billing, and patient communication.",
-    benefits: ["Streamlined operations", "Better patient flow", "Consistent service quality"],
+    benefits: ["Streamlined operations", "Better patient flow", "Consistent service quality", "Bilingual scheduling & communication"],
   },
   {
     icon: Building,
     title: "Hospitals",
     description: "Healthcare facilities requiring scalable support for various departments and specialties.",
-    benefits: ["Scalable workforce", "24/7 coverage options", "Cost-effective staffing"],
+    benefits: ["Scalable workforce", "24/7 coverage options", "Cost-effective staffing", "Multilingual staffing options"],
   },
   {
     icon: Users,
     title: "Healthcare Groups",
     description: "Multi-location practices needing centralized support with consistent standards across sites.",
-    benefits: ["Standardized processes", "Centralized management", "Quality assurance"],
+    benefits: ["Standardized processes", "Centralized management", "Quality assurance", "Consistent bilingual standards across all sites"],
   },
 ];
 
@@ -65,14 +65,14 @@ const WhoWeServe = () => {
               <div className="w-14 h-14 rounded-2xl bg-secondary flex items-center justify-center mb-5 transition-all group-hover:bg-primary group-hover:shadow-glow">
                 <audience.icon className="w-6 h-6 text-primary group-hover:text-primary-foreground transition-colors" />
               </div>
-              
+
               <h3 className="text-heading-sm font-semibold text-foreground mb-3">
                 {audience.title}
               </h3>
               <p className="text-body-sm text-muted-foreground mb-4">
                 {audience.description}
               </p>
-              
+
               <ul className="space-y-2">
                 {audience.benefits.map((benefit, idx) => (
                   <li key={idx} className="flex items-center gap-2 text-body-sm text-muted-foreground">

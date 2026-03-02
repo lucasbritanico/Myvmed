@@ -100,7 +100,7 @@ const Footer = () => {
             <h4 className="font-semibold text-lg mb-6">Contact</h4>
             <ul className="space-y-4 text-white/70">
               <li className="flex items-start gap-3">
-                <span>Santa Barbara , califonia<br /></span>
+                <span>San Clemente, California<br /></span>
               </li>
               <li>
                 <a href="tel:+15555555555" className="hover:text-white transition-colors">

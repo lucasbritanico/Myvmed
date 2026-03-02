@@ -32,8 +32,8 @@ const Header = () => {
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${isScrolled
-          ? "bg-white/95 backdrop-blur-md shadow-md py-2 pointer-events-auto"
-          : "pt-6 pointer-events-none bg-transparent"
+        ? "bg-white/95 backdrop-blur-md shadow-md py-2 pointer-events-auto"
+        : "pt-6 pointer-events-none bg-transparent"
         }`}
     >
       {/* Container aligned with page content */}
@@ -47,8 +47,8 @@ const Header = () => {
             src="/myvmedlogo.png"
             alt="Myvmed"
             className={`relative w-auto object-contain transition-all duration-500 group-hover:scale-105 drop-shadow-xl ${isScrolled
-                ? "h-14 md:h-16"
-                : "h-32 md:h-48 brightness-0 invert opacity-90"
+              ? "h-14 md:h-16"
+              : `h-32 md:h-48 ${location.pathname === '/' ? 'brightness-0 invert opacity-90' : ''}`
               }`}
           />
         </Link>
