@@ -33,7 +33,7 @@ const FloatingBanner = () => {
                     animate={{ opacity: 1, y: 0, scale: 1 }}
                     exit={{ opacity: 0, y: 40, scale: 0.95 }}
                     transition={{ duration: 0.6, type: "spring", stiffness: 120, damping: 20 }}
-                    className="fixed bottom-6 left-1/2 -translate-x-1/2 z-[100] w-[95%] max-w-3xl pointer-events-none"
+                    className="fixed bottom-6 inset-x-0 mx-auto z-[100] w-[95%] max-w-3xl pointer-events-none"
                 >
                     <div className="relative overflow-hidden rounded-2xl bg-[#0f172a]/85 backdrop-blur-xl border border-blue-500/30 p-[1px] shadow-[0_10px_40px_-10px_rgba(0,123,255,0.4)] pointer-events-auto">
 
