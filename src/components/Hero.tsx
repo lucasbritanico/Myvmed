@@ -187,7 +187,7 @@ const Hero = () => {
                     <span className="text-white/80 text-sm font-medium uppercase tracking-wider">Available Now</span>
                   </div>
                   <p className="text-white text-xl font-medium leading-snug">
-                    "The most reliable staffing update we've ever made."
+                    "We now offer Spanish-speaking Virtual Medical Assistants."
                   </p>
                 </div>
               </div>

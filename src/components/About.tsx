@@ -21,6 +21,7 @@ const values = [
     icon: Globe,
     title: "Bilingual Patient Support",
     description: "Our Spanish-speaking VMAs from Mexico and Latin America ensure no patient is lost in translation.",
+    highlight: true,
   },
 ];
 
@@ -100,12 +101,20 @@ const About = () => {
                   }
                 }}
                 transition={{ duration: 0.6, ease: "easeInOut", delay: 0.3 + index * 0.15 }}
-                className="card-premium p-6 flex gap-5"
+                className={`card-premium p-6 flex gap-5 relative overflow-hidden ${value.highlight ? 'border-amber-300 shadow-[0_0_20px_-5px_rgba(251,191,36,0.3)] bg-amber-50/50 dark:bg-amber-950/10' : ''}`}
               >
-                <div className="shrink-0">
+                {/* Optional glow background for highlight */}
+                {value.highlight && (
                   <motion.div
-                    animate={{ scale: [1, 1.05, 1] }}
-                    transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+                    animate={{ opacity: [0.1, 0.3, 0.1] }}
+                    transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+                    className="absolute inset-0 bg-gradient-to-br from-amber-200/20 to-transparent pointer-events-none"
+                  />
+                )}
+                <div className="shrink-0 relative z-10">
+                  <motion.div
+                    animate={value.highlight ? { scale: [1, 1.1, 1], rotate: [0, -5, 5, 0] } : { scale: [1, 1.05, 1] }}
+                    transition={{ duration: value.highlight ? 4 : 3, repeat: Infinity, ease: "easeInOut" }}
                   >
                     <motion.div
                       variants={{
@@ -115,17 +124,25 @@ const About = () => {
                           transition: { duration: 0.5, ease: "easeInOut" }
                         }
                       }}
-                      className="w-14 h-14 rounded-2xl bg-gradient-to-br from-primary to-primary/80 flex items-center justify-center shadow-glow"
+                      className={`w-14 h-14 rounded-2xl flex items-center justify-center shadow-glow ${value.highlight ? 'bg-gradient-to-br from-amber-400 to-orange-500 shadow-[0_0_15px_rgba(245,158,11,0.5)]' : 'bg-gradient-to-br from-primary to-primary/80'}`}
                     >
-                      <value.icon className="w-6 h-6 text-primary-foreground" />
+                      <value.icon className="w-6 h-6 text-white" />
                     </motion.div>
                   </motion.div>
                 </div>
-                <div>
-                  <h3 className="text-heading-sm font-semibold text-foreground mb-2">
-                    {value.title}
-                  </h3>
-                  <p className="text-body text-muted-foreground">
+                <div className="flex-1 relative z-10">
+                  <div className="flex flex-col xl:flex-row xl:items-center gap-2 mb-2">
+                    <h3 className="text-heading-sm font-semibold text-foreground">
+                      {value.title}
+                    </h3>
+                    {value.highlight && (
+                      <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-amber-100 border border-amber-300 text-[11px] font-bold text-amber-800 shadow-sm uppercase tracking-wider">
+                        <span className="w-1.5 h-1.5 rounded-full bg-amber-500 animate-pulse"></span>
+                        Spanish-Speaking
+                      </span>
+                    )}
+                  </div>
+                  <p className="text-body text-muted-foreground leading-relaxed">
                     {value.description}
                   </p>
                 </div>

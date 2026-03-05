@@ -8,6 +8,7 @@ import Trust from "@/components/Trust";
 import About from "@/components/About";
 import CTA from "@/components/CTA";
 import Footer from "@/components/Footer";
+import FloatingLanguageBubble from "@/components/FloatingLanguageBubble";
 
 const Index = () => {
   return (
@@ -24,6 +25,7 @@ const Index = () => {
         <CTA />
       </main>
       <Footer />
+      <FloatingLanguageBubble />
     </div>
   );
 };
