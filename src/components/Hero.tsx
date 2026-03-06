@@ -176,8 +176,8 @@ const Hero = () => {
                       <span className="block text-[13px] font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-amber-100 via-amber-300 to-amber-100 leading-none mb-1">
                         SPANISH-SPEAKING
                       </span>
-                      <span className="block text-[10px] font-bold text-amber-200/70 tracking-wider uppercase leading-none">
-                        VMAs Available
+                      <span className="block text-[10px] font-bold text-amber-200/70 tracking-wider leading-none">
+                        VMAs AVAILABLE
                       </span>
                     </div>
                   </div>

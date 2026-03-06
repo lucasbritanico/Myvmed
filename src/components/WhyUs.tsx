@@ -57,8 +57,8 @@ const WhyUs = () => {
             transition={{ duration: 0.6 }}
             className="lg:sticky lg:top-32"
           >
-            <span className="text-sm font-bold text-warm-500 uppercase tracking-wider mb-2 block">
-              Why Philippines-Based VMAs
+            <span className="text-sm font-bold text-warm-500 tracking-wider mb-2 block">
+              WHY PHILIPPINES-BASED VMAs
             </span>
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
               The Smart Choice for Healthcare Support
