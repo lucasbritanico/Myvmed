@@ -3,6 +3,12 @@ import { Heart, Target, Users, Globe } from "lucide-react";
 
 const values = [
   {
+    icon: Globe,
+    title: "Bilingual Patient Support",
+    description: "We have Spanish and Spanish-speaking VMAs available to ensure no patient is lost in translation.",
+    highlight: true,
+  },
+  {
     icon: Heart,
     title: "Patient-First Mindset",
     description: "Every task we handle is done with patient well-being at the center.",
@@ -16,12 +22,6 @@ const values = [
     icon: Users,
     title: "True Partnership",
     description: "We become an extension of your team, not just a vendor.",
-  },
-  {
-    icon: Globe,
-    title: "Bilingual Patient Support",
-    description: "Our Spanish-speaking VMAs from Mexico and Latin America ensure no patient is lost in translation.",
-    highlight: true,
   },
 ];
 
@@ -59,9 +59,8 @@ const About = () => {
                 and genuinely invested in helping your practice succeed.
               </p>
               <p>
-                Additionally, we are proud to offer bilingual capabilities. Our Virtual Medical Assistants
-                (VMAs) from Mexico and other Spanish-speaking Latin American countries allow your practice
-                to serve Spanish-speaking patients seamlessly and with a cultural connection.
+                Additionally, we are proud to offer bilingual capabilities. We have Spanish and Spanish-speaking
+                Virtual Medical Assistants (VMAs) available, allowing your practice to serve your patients seamlessly.
               </p>
             </div>
 

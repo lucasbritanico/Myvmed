@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import { DollarSign } from "lucide-react";
+import { DollarSign, Globe } from "lucide-react";
 
 const Hero = () => {
   const containerVariants = {
@@ -35,7 +35,7 @@ const Hero = () => {
   };
 
   return (
-    <section className="relative min-h-screen flex items-start justify-center overflow-hidden bg-primary pt-40 md:pt-56 pb-20 text-white selection:bg-secondary selection:text-white">
+    <section className="relative min-h-screen flex items-start justify-center overflow-hidden bg-primary pt-28 md:pt-40 lg:pt-40 pb-28 md:pb-32 text-white selection:bg-secondary selection:text-white">
       {/* Finovo-style Active Ambient Glow */}
       <motion.div
         animate={{
@@ -57,7 +57,7 @@ const Hero = () => {
       />
 
       <div className="container mx-auto px-6 md:px-12 relative z-10">
-        <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           {/* Text Content */}
           <motion.div
             variants={containerVariants}
@@ -72,7 +72,7 @@ const Hero = () => {
 
             <motion.h1
               variants={itemVariants}
-              className="text-4xl md:text-6xl lg:text-[4.5rem] font-bold leading-[1.1] tracking-tight mb-6"
+              className="text-4xl md:text-5xl lg:text-6xl xl:text-[4rem] font-bold leading-[1.15] tracking-tight mb-5"
             >
               Leading Healthcare <br />
               <span className="text-secondary">
@@ -85,37 +85,37 @@ const Hero = () => {
 
             <motion.h2
               variants={itemVariants}
-              className="text-2xl md:text-3xl font-bold text-gray-200 mb-6 max-w-2xl mx-auto lg:mx-0"
+              className="text-xl md:text-2xl lg:text-3xl font-bold text-gray-200 mb-5 max-w-2xl mx-auto lg:mx-0"
             >
               Cut staffing costs by up to 70% — without sacrificing quality.
             </motion.h2>
 
             <motion.p
               variants={itemVariants}
-              className="text-lg md:text-xl text-gray-300 mb-10 max-w-xl mx-auto lg:mx-0 leading-relaxed font-light"
+              className="text-base md:text-lg text-gray-300 mb-8 max-w-xl mx-auto lg:mx-0 leading-relaxed font-light"
             >
               <strong className="text-white block mb-2">For Medical, Dental, Veterinary & Optometry Practices.</strong>
               Reclaim your time and go home before 5 o'clock. Our HIPAA-compliant virtual assistants handle the busywork so you can focus on your patients.
             </motion.p>
 
-            <motion.div variants={itemVariants} className="flex flex-wrap items-center gap-6 justify-center lg:justify-start">
-              <Button
-                size="lg"
-                className="h-14 px-8 rounded-full bg-secondary hover:bg-secondary/90 text-white font-semibold text-base shadow-[0_4px_20px_rgba(0,119,255,0.3)] shrink-0"
-                asChild
-              >
-                <Link to="/consultation" className="flex items-center gap-2">
-                  <motion.div
-                    whileHover={{ x: 3 }}
-                    transition={{ duration: 0.2 }}
-                    className="flex items-center gap-2"
-                  >
-                    Get Started <span className="text-xl">↗</span>
-                  </motion.div>
-                </Link>
-              </Button>
+            <div className="flex flex-col gap-6">
+              <motion.div variants={itemVariants} className="flex flex-wrap items-center gap-6 justify-center lg:justify-start">
+                <Button
+                  size="lg"
+                  className="h-14 px-8 rounded-full bg-secondary hover:bg-secondary/90 text-white font-semibold text-base shadow-[0_4px_20px_rgba(0,119,255,0.3)] shrink-0"
+                  asChild
+                >
+                  <Link to="/consultation" className="flex items-center gap-2">
+                    <motion.div
+                      whileHover={{ x: 3 }}
+                      transition={{ duration: 0.2 }}
+                      className="flex items-center gap-2"
+                    >
+                      Get Started <span className="text-xl">↗</span>
+                    </motion.div>
+                  </Link>
+                </Button>
 
-              <div className="flex flex-wrap items-center justify-center lg:justify-start gap-4 sm:gap-6">
                 {/* Social Proof Avatar Stack */}
                 <div className="flex items-center gap-3">
                   <div className="flex -space-x-3">
@@ -130,18 +130,20 @@ const Hero = () => {
                     <p className="text-gray-400 text-xs">Trusted Clinics</p>
                   </div>
                 </div>
+              </motion.div>
 
+              <motion.div variants={itemVariants} className="flex flex-wrap items-center justify-center lg:justify-start gap-4">
                 {/* Golden USP Badge */}
                 <motion.div
                   whileHover={{ scale: 1.02 }}
-                  className="relative group"
+                  className="relative group w-full sm:w-auto"
                 >
                   <motion.div
                     animate={{ opacity: [0.3, 0.5, 0.3] }}
                     transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
                     className="absolute inset-0 bg-amber-500/25 rounded-full blur-md"
                   />
-                  <div className="relative flex items-center gap-3 px-4 py-2 rounded-full border border-amber-400/40 bg-amber-950/20 backdrop-blur-md shadow-[0_0_15px_rgba(251,191,36,0.15)]">
+                  <div className="relative flex items-center justify-center sm:justify-start gap-3 px-4 py-2 rounded-full border border-amber-400/40 bg-amber-950/20 backdrop-blur-md shadow-[0_0_15px_rgba(251,191,36,0.15)]">
                     <div className="flex items-center justify-center w-8 h-8 rounded-full bg-gradient-to-br from-amber-200 via-amber-400 to-amber-600 shadow-[0_0_10px_rgba(251,191,36,0.3)] shrink-0">
                       <DollarSign className="w-5 h-5 text-indigo-950" strokeWidth={2.5} />
                     </div>
@@ -155,8 +157,33 @@ const Hero = () => {
                     </div>
                   </div>
                 </motion.div>
-              </div>
-            </motion.div>
+
+                {/* Spanish USP Badge */}
+                <motion.div
+                  whileHover={{ scale: 1.02 }}
+                  className="relative group w-full sm:w-auto"
+                >
+                  <motion.div
+                    animate={{ opacity: [0.3, 0.5, 0.3] }}
+                    transition={{ duration: 3, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
+                    className="absolute inset-0 bg-amber-500/25 rounded-full blur-md"
+                  />
+                  <div className="relative flex items-center justify-center sm:justify-start gap-3 px-4 py-2 rounded-full border border-amber-400/40 bg-amber-950/20 backdrop-blur-md shadow-[0_0_15px_rgba(251,191,36,0.15)]">
+                    <div className="flex items-center justify-center w-8 h-8 rounded-full bg-gradient-to-br from-amber-200 via-amber-400 to-amber-600 shadow-[0_0_10px_rgba(251,191,36,0.3)] shrink-0">
+                      <Globe className="w-5 h-5 text-indigo-950" strokeWidth={2.5} />
+                    </div>
+                    <div className="text-left py-0.5">
+                      <span className="block text-[13px] font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-amber-100 via-amber-300 to-amber-100 leading-none mb-1">
+                        SPANISH-SPEAKING
+                      </span>
+                      <span className="block text-[10px] font-bold text-amber-200/70 tracking-wider uppercase leading-none">
+                        VMA Available
+                      </span>
+                    </div>
+                  </div>
+                </motion.div>
+              </motion.div>
+            </div>
           </motion.div>
 
           {/* Image/Visual - Large Rounded Card with Floating Animation */}
@@ -186,8 +213,8 @@ const Hero = () => {
                     <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
                     <span className="text-white/80 text-sm font-medium uppercase tracking-wider">Available Now</span>
                   </div>
-                  <p className="text-white text-xl font-medium leading-snug">
-                    "We now offer Spanish-speaking Virtual Medical Assistants."
+                  <p className="text-white md:text-xl text-lg font-medium leading-snug">
+                    Spanish-Speaking Virtual Medical Assistants
                   </p>
                 </div>
               </div>

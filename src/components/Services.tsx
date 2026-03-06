@@ -5,24 +5,30 @@ import { Link } from "react-router-dom";
 const services = [
   {
     id: "01",
+    title: "Bilingual Virtual Assistants",
+    description: "Expand your patient reach with our Spanish-speaking Virtual Medical Assistants, ensuring seamless communication and care.",
+    href: "/services",
+  },
+  {
+    id: "02",
     title: "Medical Virtual Assistants",
     description: "Live charting, transcription, referrals, and phone triage. Our HVAs integrate seamlessly into your practice workflow.",
     href: "/services",
   },
   {
-    id: "02",
+    id: "03",
     title: "Dental Virtual Assistants",
     description: "Insurance verification, appointment scheduling, and treatment planning coordination for modern dental practices.",
     href: "/services",
   },
   {
-    id: "03",
+    id: "04",
     title: "Veterinary Virtual Assistants",
     description: "Support for veterinary clinics including record keeping, client communications, and administrative tasks.",
     href: "/services",
   },
   {
-    id: "04",
+    id: "05",
     title: "Optometry Virtual Assistants",
     description: " specialized support for eye care professionals, handling pre-testing documentation, billing, and patient recall.",
     href: "/services",

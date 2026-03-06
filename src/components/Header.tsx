@@ -48,7 +48,7 @@ const Header = () => {
             alt="Myvmed"
             className={`relative w-auto object-contain transition-all duration-500 group-hover:scale-105 drop-shadow-xl ${isScrolled
               ? "h-14 md:h-16"
-              : `h-32 md:h-48 ${location.pathname === '/' ? 'brightness-0 invert opacity-90' : ''}`
+              : `h-20 md:h-32 ${location.pathname === '/' ? 'brightness-0 invert opacity-90' : ''}`
               }`}
           />
         </Link>
