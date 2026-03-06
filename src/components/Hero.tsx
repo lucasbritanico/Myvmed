@@ -177,7 +177,7 @@ const Hero = () => {
                         SPANISH-SPEAKING
                       </span>
                       <span className="block text-[10px] font-bold text-amber-200/70 tracking-wider uppercase leading-none">
-                        VMA Available
+                        VMAs Available
                       </span>
                     </div>
                   </div>
